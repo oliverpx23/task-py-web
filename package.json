@@ -11,7 +11,7 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "start": "npx serve ./dist -s -n -L -p 8000"
+    "start": "npx serve ./dist -s -n -L -p $PORT"
   },
   "dependencies": {
     "react": "^18.2.0",
