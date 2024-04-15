@@ -1,6 +1,14 @@
+import { PageContainer } from "@/core/components";
+import { Board } from "@/core/components/kanban";
 
 export const KanbanPage = () => {
+
+
   return (
-    <div>KanbanPage</div>
-  )
-}
+    <PageContainer center>
+      <Board status="pending" />
+      <Board status="in-progress" />
+      <Board status="done"/>
+    </PageContainer>
+  );
+};
