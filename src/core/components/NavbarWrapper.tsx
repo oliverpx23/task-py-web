@@ -78,7 +78,7 @@ export const NavbarWrapper = ({ children }: Props) => {
             name="Oliver Pots"
             description="Senior Fullstack Developer"
             avatarProps={{
-              src: "https://avatars.githubusercontent.com/u/30373425?v=4"
+              src: "/profile.jpg"
             }}
           />
         </NavbarContent>
