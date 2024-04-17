@@ -9,7 +9,7 @@ export const RootLayout = () => {
 
 
   if (pathname === "/") {
-    return <Navigate to="/app/boards" />;
+    return <Navigate to="/app/kanban" />;
   }
 
   return (
