@@ -1,5 +1,5 @@
 # https://nixpacks.com/docs/configuration/file
-providers = ["node"]
+providers = ['node']
 
 [variables]
     NPM_CONFIG_UPDATE_NOTIFIER = 'false'
