@@ -1,17 +1,19 @@
 import { TaskStatus } from "@/interfaces";
 import { useTaskStore } from "@/store/task.store";
-import { Button, ScrollShadow, Spacer } from "@nextui-org/react";
+import { Button, CircularProgress, ScrollShadow, Spacer } from "@nextui-org/react";
 import { clsx } from "clsx";
 import { TaskCard } from "./TaskCard";
 import { useState, DragEvent } from "react";
 
 interface Props {
   status: TaskStatus;
+  openNewTaskModal: (status: TaskStatus) => void
 }
 
-export const Board = ({ status }: Props) => {
+export const Board = ({ status, openNewTaskModal }: Props) => {
   const tasks = useTaskStore((state) => state.getTaskByStatus(status));
   const isDragging = useTaskStore((state) => !!state.draggingTaskId);
+  const isloading = useTaskStore((state) => state.isLoading);
 
   const onTaskDrop = useTaskStore((state) => state.onTaskDrop);
 
@@ -53,10 +55,17 @@ export const Board = ({ status }: Props) => {
           status == 'done' && "bg-success-800",
         ])}
       >
-        <span className="block text-sm font-semibold uppercase">
+        <span className="flex justify-between text-sm font-semibold uppercase">
           {status} ({tasks.length})
+          {
+            isloading &&
+            <div className="flex">
+              <CircularProgress classNames={{
+                svg: "w-4 h-4"
+              }} size="lg" aria-label="cargando..."/>
+            </div>
+          }
         </span>
-        <Spacer />
       </div>
 
       <ScrollShadow className="w-full h-[calc(100vh-200px)] lg:h-[calc(100vh-250px)] px-4" hideScrollBar>
@@ -66,6 +75,7 @@ export const Board = ({ status }: Props) => {
       </ScrollShadow>
 
       <Button 
+        onClick={() => openNewTaskModal(status)}
         className={clsx([
           `rounded-md`,
           status == 'pending' && "border-warning-800",
