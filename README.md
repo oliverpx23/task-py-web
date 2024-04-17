@@ -1,30 +1,63 @@
-# React + TypeScript + Vite
+# Guía de inicio rápido para la aplicación Taskpy
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta guía te ayudará a configurar y ejecutar la aplicacion.
 
-Currently, two official plugins are available:
+## Prerrequisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Antes de comenzar, asegúrate de tener instalados los siguientes programas:
 
-## Expanding the ESLint configuration
+- [Node.js](https://nodejs.org/) - Descargar e instalar Node.js
+- [Yarn](https://yarnpkg.com/) - Instalar Yarn
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Configuración de entorno
 
-- Configure the top-level `parserOptions` property like this:
+1. Copia el archivo `.env.template` y pégalo en el mismo directorio con el nombre `.env`.
+2. Edita el archivo `.env` según sea necesario.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## Instalación de dependencias
+
+Ejecuta el siguiente comando en tu terminal para instalar las dependencias:
+
+```bash
+yarn install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Ejecutar la aplicación en modo de desarrollo
+
+Para iniciar la aplicación en un entorno de desarrollo, ejecuta el siguiente comando:
+
+```bash
+yarn dev
+```
+
+## Compilar la aplicación
+
+Para compilar la aplicación en producción, ejecuta el siguiente comando:
+
+```bash
+yarn build
+```
+
+## Despliegue automático
+
+El despliegue automático está configurado para ejecutarse cuando haces push a la rama `main`. Utiliza el archivo `nixpacks.toml` en la plataforma Railway para configurar tus opciones de CI/CD.
+
+
+## Dependencias
+
+### UI
+- [@nextui-org/react](https://nextui.org/docs) - Framework de UI para React.
+- [framer-motion](https://www.framer.com/motion/) - Biblioteca de animaciones para React.
+- [tailwindcss](https://tailwindcss.com/) - Framework de CSS de utilidad.
+- [react-icons](https://react-icons.github.io/react-icons/) - Iconos personalizables para React.
+
+### Gestor de destado
+- [zustand](https://zustand.surge.sh/) - Biblioteca de gestión de estado ligera para React.
+- [immer](https://immerjs.github.io/immer/) - Una forma más sencilla de trabajar con el estado inmutable en JavaScript.
+
+### HTTP y Formularios
+- [axios](https://axios-http.com/docs/intro) - Cliente HTTP basado en Promesas para el navegador y Node.js.
+- [react-hook-form](https://react-hook-form.com/get-started) - Biblioteca para manejar formularios en React.
+
+### Router
+- [react-router-dom](https://reactrouter.com/web/guides/quick-start) - Enrutamiento declarativo para React.
