@@ -1,6 +1,6 @@
 import { TaskStatus } from "@/interfaces";
 import { useTaskStore } from "@/store/task.store";
-import { Button, CircularProgress, ScrollShadow, Spacer } from "@nextui-org/react";
+import { Button, CircularProgress, ScrollShadow } from "@nextui-org/react";
 import { clsx } from "clsx";
 import { TaskCard } from "./TaskCard";
 import { useState, DragEvent } from "react";

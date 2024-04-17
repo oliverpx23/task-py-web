@@ -51,7 +51,7 @@ export class TasksService {
 
   static async deleteTask(taskId: number | string) {
     try {
-      const { data } = await taskpyApi.delete<Task>(`/v1/tasks/${taskId}/`);
+      await taskpyApi.delete<Task>(`/v1/tasks/${taskId}/`);
       console.log("deleteTask => ", true);
       return true;
     } catch (error) {
